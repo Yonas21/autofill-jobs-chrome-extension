@@ -22,6 +22,12 @@ async function fillForm(profile, settings) {
     name: ['name', 'full-name', 'full_name', 'applicant_name'],
     email: ['email', 'e-mail', 'applicant_email'],
     phone: ['phone', 'telephone', 'mobile', 'phone_number'],
+    location: ['location', 'address', 'city', 'state', 'country'],
+    resumeUrl: ['resume', 'cv', 'curriculum_vitae'],
+    linkedin: ['linkedin', 'linked_in', 'linkedin_profile'],
+    github: ['github', 'git_hub', 'github_profile'],
+    experience: ['experience', 'work_experience', 'professional_experience'],
+    education: ['education', 'academic_background', 'qualifications']
     // Add more field mappings
   }
 

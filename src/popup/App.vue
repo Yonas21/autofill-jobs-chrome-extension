@@ -51,6 +51,7 @@ export default {
       name: '',
       email: '',
       phone: '',
+      location: '',
       resumeUrl: '',
       linkedin: '',
       github: '',
@@ -67,15 +68,19 @@ export default {
     
     const loadProfile = async () => {
       const data = await chrome.storage.local.get(['profileData', 'settings'])
-      if (data.profileData) profileData.value = data.profileData
+      if (data.profileData) {
+        profileData.value = data.profileData;
+        console.log("Profile loaded:", data.profileData);
+      }
       if (data.settings) Object.assign(settings, data.settings)
     }
     
     const saveProfile = async () => {
-      await chrome.storage.local.set({ 
+      await chrome.storage.local.set({
         profileData: profileData.value,
-        settings 
-      })
+        settings
+      });
+      console.log("Profile saved:", profileData.value);
     }
     
     const fillCurrentForm = () => {
